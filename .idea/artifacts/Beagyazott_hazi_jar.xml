@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Beagyazott hazi:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Beagyazott_hazi_jar</output-path>
+    <root id="archive" name="Beagyazott hazi.jar">
+      <element id="module-output" name="Beagyazott hazi" />
+      <element id="library" level="project" name="res" />
+    </root>
+  </artifact>
+</component>
