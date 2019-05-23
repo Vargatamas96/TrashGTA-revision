@@ -46,6 +46,7 @@ public class GameClient extends Thread {
         Packet packet = null;
         switch (type) {
             default:
+                break;
             case INVALID:
                 break;
             case LOGIN:
@@ -59,9 +60,11 @@ public class GameClient extends Thread {
             case MOVE:
                 packet = new Packet02Move(data);
                 handleMove((Packet02Move) packet);
+                break;
             case MOVECIV:
                 packet = new Packet03MoveCiv(data);
                 handleMoveCiv((Packet03MoveCiv) packet);
+                break;
         }
     }
 

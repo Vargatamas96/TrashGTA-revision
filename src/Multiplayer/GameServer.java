@@ -46,6 +46,7 @@ public class GameServer extends Thread {
         Packet packet = null;
         switch (type) {
             default:
+                break;
             case INVALID:
                 break;
             case LOGIN:
@@ -63,9 +64,11 @@ public class GameServer extends Thread {
                 packet = new Packet02Move(data);
                 System.out.println(((Packet02Move) packet).getUsername() + "has moved to " + ((Packet02Move) packet).getX() + "," + ((Packet02Move) packet).getY());
                 this.handleMove(((Packet02Move) packet));
+                break;
             case MOVECIV:
                 packet = new Packet03MoveCiv(data);
                 this.handleMoveCiv((Packet03MoveCiv) packet);
+                break;
         }
     }
 
@@ -135,12 +138,12 @@ public class GameServer extends Thread {
     }
 
     private void handleMove(Packet02Move packet) {
-        if (getPlayerMP(packet.getUsername()) != null) {
+       /* if (getPlayerMP(packet.getUsername()) != null) {
             int index = getPlayerMPIndex(packet.getUsername());
             this.connectedPlayers.get(index).x = packet.getX();
-            this.connectedPlayers.get(index).y = packet.getY();
+            this.connectedPlayers.get(index).y = packet.getY();*/
             packet.writeData(this);
-        }
+        //}
     }
 
     private void handleMoveCiv(Packet03MoveCiv packet) {

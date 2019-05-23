@@ -7,10 +7,10 @@ public class Packet03MoveCiv extends Packet {
     public Packet03MoveCiv(byte[] data) {
         super(03);
         String[] dataArray = readData(data).split(",");
-        this.x = Integer.parseInt(dataArray[1]);
-        this.y = Integer.parseInt(dataArray[2]);
-        this.index = Integer.parseInt(dataArray[3]);
-        this.count = Integer.parseInt(dataArray[4]);
+        this.x = Integer.parseInt(dataArray[0]);
+        this.y = Integer.parseInt(dataArray[1]);
+        this.index = Integer.parseInt(dataArray[2]);
+        this.count = Integer.parseInt(dataArray[3]);
     }
 
     public Packet03MoveCiv(int x, int y, int index, int count) {
